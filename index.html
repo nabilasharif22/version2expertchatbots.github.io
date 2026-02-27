@@ -1,0 +1,132 @@
+        <!doctype html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Front-End Starter</title>
+            <meta name="description" content="A lightweight, responsive front-end starter in vanilla HTML/CSS/JS" />
+            <link rel="stylesheet" href="assets/css/styles.css" />
+          </head>
+          <body>
+            <header class="site-header">
+              <nav class="nav container">
+                <a href="#" class="brand">⚡ Front‑End Starter</a>
+                <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle theme">🌓</button>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰</button>
+                <ul id="navMenu" class="nav-menu">
+                  <li><a href="#features">Features</a></li>
+                  <li><a href="#components">Components</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </nav>
+            </header>
+
+            <main>
+              <section class="hero container">
+                <h1>Build fast. Ship faster.</h1>
+                <p>A clean, mobile‑first template with modern semantics, utilities, and interactive components—no framework required.</p>
+                <div class="actions">
+                  <button id="openModal" class="btn">Open Modal</button>
+                  <button id="showToast" class="btn btn-secondary">Show Toast</button>
+                </div>
+              </section>
+
+              <section id="features" class="container section">
+                <h2>Features</h2>
+                <div class="grid three">
+                  <article class="card">
+                    <h3>Responsive</h3>
+                    <p>Mobile‑first layout with CSS variables, fluid typography, and accessible color contrast.</p>
+                  </article>
+                  <article class="card">
+                    <h3>Interactive</h3>
+                    <p>Includes modal, toast, tabs, and form validation—all in ~3KB of vanilla JS.</p>
+                  </article>
+                  <article class="card">
+                    <h3>Themeable</h3>
+                    <p>Light/dark theme toggle with <code>prefers-color-scheme</code> and local storage persistence.</p>
+                  </article>
+                </div>
+              </section>
+
+              <section id="components" class="container section">
+                <h2>Tabs Demo</h2>
+                <div class="tabs" data-tabs>
+                  <div role="tablist" aria-label="Sample Tabs" class="tablist">
+                    <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1">Overview</button>
+                    <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2">Details</button>
+                    <button role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3">Code</button>
+                  </div>
+                  <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="tabpanel is-active">
+                    <p>This starter gives you sensible defaults and utilities so you can focus on product, not plumbing.</p>
+                  </div>
+                  <div id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="tabpanel">
+                    <ul class="list">
+                      <li>No build step required</li>
+                      <li>Semantically structured HTML</li>
+                      <li>CSS variables & utility classes</li>
+                      <li>Accessible interactions</li>
+                    </ul>
+                  </div>
+                  <div id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" class="tabpanel">
+<pre><code>// app.js (excerpt)
+setupThemeToggle();
+setupModal();
+setupToast();
+setupTabs();
+setupFormValidation();
+</code></pre>
+                  </div>
+                </div>
+              </section>
+
+              <section id="contact" class="container section">
+                <h2>Contact Form</h2>
+                <form id="contactForm" novalidate>
+                  <div class="form-field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required minlength="2" placeholder="Your name" />
+                    <small class="error" aria-live="polite"></small>
+                  </div>
+                  <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com" />
+                    <small class="error" aria-live="polite"></small>
+                  </div>
+                  <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required minlength="10" placeholder="How can we help?"></textarea>
+                    <small class="error" aria-live="polite"></small>
+                  </div>
+                  <button type="submit" class="btn">Send</button>
+                </form>
+              </section>
+            </main>
+
+            <footer class="site-footer">
+              <div class="container">
+                <p>© <span id="year"></span> Front‑End Starter. MIT Licensed.</p>
+              </div>
+            </footer>
+
+            <!-- Modal -->
+            <dialog id="demoModal" class="modal">
+              <article>
+                <header>
+                  <h3>Hello from the modal</h3>
+                </header>
+                <p>This is a native <code>&lt;dialog&gt;</code> element enhanced with JS for consistent behavior.</p>
+                <footer class="modal-actions">
+                  <button class="btn" data-close-modal>Close</button>
+                </footer>
+              </article>
+            </dialog>
+
+            <!-- Toast -->
+            <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+              <span>✅ Action completed</span>
+            </div>
+
+            <script type="module" src="assets/js/app.js"></script>
+          </body>
+        </html>
